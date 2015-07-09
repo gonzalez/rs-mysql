@@ -273,3 +273,10 @@ attribute 'rs-mysql/import/dump_file',
     ' Example: dumpfile_20140102.gz',
   :required => 'optional',
   :recipes => ['rs-mysql::dump_import']
+
+  attribute 'rs-mysql/query_cache_size',
+    :display_name => 'MySQL Tunable query_cache_size',
+    :description => 'Sets the query_cache_size option',
+    :required => 'optional',
+    :recipes => ['rs-mysql::default']
+    
