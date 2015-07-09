@@ -55,7 +55,16 @@ Chef::Log.info "Overriding mysql/tunable/log_bin to '#{node['mysql']['data_dir']
 node.override['mysql']['tunable']['log_bin'] = "#{node['mysql']['data_dir']}/mysql_binlogs/mysql-bin"
 
 Chef::Log.info "Overriding mysql/tunable/binlog_format to 'MIXED'"
-node.override['mysql']['tunable']['binlog_format'] = 'MIXED'
+node.override['mysql']['tunable']['binlog_format'] = node['rs-mysql']'[mysql_binlog_format']
+
+
+node.override['mysql']['tunable']['query_cache_size'] = node['rs-mysql']['query_cache_size']
+node.override['mysql']['tunable']['max_connections'] = node['rs-mysql']['max_connections']
+node.override['mysql']['tunable']['innodb_lock_wait_timeout'] = node['rs-mysql']['innodb_lock_wait_timeout']
+node.override['mysql']['tunable']['innodb_additional_mem_pool_size'] = node['rs-mysql']['innodb_additional_mem_pool_size']
+node.override['mysql']['tunable']['innodb_buffer_pool_size'] = node['rs-mysql']['innodb_buffer_pool_size']
+
+
 
 # Convert the server IP to an integer and use it for the server-id attribute in my.cnf
 server_id = RsMysql::Helper.get_server_ip(node).to_i
