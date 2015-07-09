@@ -281,4 +281,9 @@ attribute 'rs-mysql/import/dump_file',
     :description => 'Sets the query_cache_size option',
     :required => 'optional',
     :recipes => ['rs-mysql::default']
-    
+
+  attribute 'rs-mysql/mysql_binlog_format',
+    :display_name => 'MySQL Bin Log Format',
+    :description => 'Sets the mysql_binlog_format ',
+    :required => 'optional',
+    :recipes => ['rs-mysql::default']
