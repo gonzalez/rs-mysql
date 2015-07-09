@@ -82,7 +82,7 @@ Chef::Log.info "Overriding mysql/tunable/log_bin to '#{node['mysql']['data_dir']
 node.override['mysql']['tunable']['log_bin'] = "#{node['mysql']['data_dir']}/mysql_binlogs/mysql-bin"
 
 Chef::Log.info "Overriding mysql/tunable/binlog_format to 'MIXED'"
-node.override['mysql']['tunable']['binlog_format'] = node['rs-mysql']'[mysql_binlog_format']
+node.override['mysql']['tunable']['binlog_format'] = node['rs-mysql']['mysql_binlog_format']
 
 
 node.override['mysql']['tunable']['query_cache_size'] = node['rs-mysql']['query_cache_size']
