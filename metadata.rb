@@ -285,13 +285,13 @@ attribute 'rs-mysql/import/dump_file',
   attribute 'rs-mysql/mysql_binlog_format',
     :display_name => 'MySQL Bin Log Format',
     :description => 'Sets the mysql_binlog_format ',
-    :required => 'required',
+    :required => 'optional',
     :default => 'STANDARD',
     :recipes => ['rs-mysql::default']
 
   attribute 'rs-mysql/innodb_buffer_pool_size',
     :display_name => 'MySQL Buffer Pool Size',
     :description => 'Sets the MySQL Buffer Pool Size ',
-    :required => 'required',
+    :required => 'optional',
     :default => '100',
     :recipes => ['rs-mysql::default']
