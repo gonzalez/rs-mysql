@@ -295,3 +295,13 @@ attribute 'rs-mysql/import/dump_file',
     :required => 'optional',
     :default => '100',
     :recipes => ['rs-mysql::default']
+
+    attribute 'rs-mysql/max_connection',
+      :display_name => 'MySQL Max Connection',
+      :description => 'Sets the MySQL Max Connection ',
+      :required => 'optional',
+      :default => '500',
+      :recipes => ['rs-mysql::default']
+
+
+  
